@@ -6,6 +6,10 @@ buildscript {
     repositories {
         google()
         mavenCentral()
+        maven { url 'https://jitpack.io' } // Add this line
+        flatDir {
+            dirs 'libs'
+        }
     }
 
     dependencies {
@@ -18,6 +22,10 @@ allprojects {
     repositories {
         google()
         mavenCentral()
+        maven { url 'https://jitpack.io' }
+        flatDir {
+            dirs 'libs'
+        }
     }
 }
 
@@ -48,6 +56,21 @@ android {
     }
 
     dependencies {
+        implementation 'androidx.appcompat:appcompat:1.6.1'
+        implementation 'com.vdurmont:emoji-java:5.1.1'
+
+        // CommonMark
+        api 'com.atlassian.commonmark:commonmark:0.13.0'
+        api 'com.atlassian.commonmark:commonmark-ext-gfm-tables:0.13.0'
+
+        // LaTeX
+        api 'ru.noties:jlatexmath-android:0.2.0'
+        api 'ru.noties:jlatexmath-android-font-cyrillic:0.2.0'
+        api 'ru.noties:jlatexmath-android-font-greek:0.2.0'
+
+        api fileTree(include: ['*.aar'], dir: 'libs')
+        api fileTree(include: ['*.jar'], dir: 'libs')
+
         testImplementation("org.jetbrains.kotlin:kotlin-test")
         testImplementation("org.mockito:mockito-core:5.0.0")
     }

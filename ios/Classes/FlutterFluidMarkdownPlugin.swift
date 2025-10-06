@@ -6,6 +6,9 @@ public class FlutterFluidMarkdownPlugin: NSObject, FlutterPlugin {
     let channel = FlutterMethodChannel(name: "flutter_fluid_markdown", binaryMessenger: registrar.messenger())
     let instance = FlutterFluidMarkdownPlugin()
     registrar.addMethodCallDelegate(instance, channel: channel)
+
+    let factory = FluidMarkdownViewFactory(messenger: registrar.messenger())
+    registrar.registerViewFactory("flutter_fluid_markdown", factory)
   }
 
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {

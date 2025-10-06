@@ -1,3 +1,9 @@
+// Copyright 2025 The Flutter Authors. All rights reserved.
+
+// platform views
+export 'src/fluid_markdown_view.dart';
+
+// --- FlutterFluidMarkdown ---
 import 'package:flutter/services.dart';
 
 class FlutterFluidMarkdown {
