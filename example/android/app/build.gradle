@@ -37,6 +37,10 @@ android {
             signingConfig = signingConfigs.debug
         }
     }
+
+    dependencies {
+        implementation fileTree(include: ['*.aar'], dir: '../../../android/libs')
+    }
 }
 
 flutter {

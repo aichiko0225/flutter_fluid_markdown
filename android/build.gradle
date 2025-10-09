@@ -68,7 +68,7 @@ android {
         api 'ru.noties:jlatexmath-android-font-cyrillic:0.2.0'
         api 'ru.noties:jlatexmath-android-font-greek:0.2.0'
 
-        api fileTree(include: ['*.aar'], dir: 'libs')
+        compileOnly fileTree(include: ['*.aar'], dir: 'libs')
         api fileTree(include: ['*.jar'], dir: 'libs')
 
         testImplementation("org.jetbrains.kotlin:kotlin-test")

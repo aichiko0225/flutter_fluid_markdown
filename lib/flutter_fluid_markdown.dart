@@ -2,6 +2,7 @@
 
 // platform views
 export 'src/fluid_markdown_view.dart';
+export 'src/fluid_markdown_controller.dart';
 
 // --- FlutterFluidMarkdown ---
 import 'package:flutter/services.dart';

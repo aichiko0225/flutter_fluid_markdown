@@ -1,6 +1,7 @@
 package com.tsystems.flutter_fluid_markdown
 
 import android.content.Context
+import android.view.ContextThemeWrapper
 import io.flutter.plugin.common.BinaryMessenger
 import io.flutter.plugin.common.StandardMessageCodec
 import io.flutter.plugin.platform.PlatformView
@@ -12,6 +13,7 @@ class FluidMarkdownViewFactory(
 
     override fun create(context: Context, viewId: Int, args: Any?): FluidMarkdownView {
         val params = args as Map<String?, Any>?
-        return FluidMarkdownView(context, viewId, params)
+        val themedContext = ContextThemeWrapper(context, androidx.appcompat.R.style.Theme_AppCompat)
+        return FluidMarkdownView(messenger,themedContext, viewId, params)
     }
 }
